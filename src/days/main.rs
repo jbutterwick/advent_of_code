@@ -1,7 +1,13 @@
 use crate::days::*;
-#[tokio::main]
-pub(crate) async fn main() -> Vec<String>{
-    let day_1 = String::from("day 1 result : ") + day_1::run();
 
-    return vec![day_1]
+pub(crate) fn main() -> Vec<String> {
+    let mut day_1 = String::from("day 1 results : ");
+    let (part1, part2) = &day_1::run().unwrap();
+    day_1.push_str("Part 1: \n");
+    day_1.push_str(part1);
+    day_1.push_str("Part 2: \n");
+    day_1.push_str(part2);
+    let mut day_2 = String::from("day 2 result : ");
+    day_2.push_str(&day_2::run().unwrap_or("nothing".parse().unwrap()));
+    return vec![day_1, day_2]
 }
