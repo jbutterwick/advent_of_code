@@ -1,17 +1,21 @@
 use crate::days::*;
 
-pub(crate) fn main() -> Vec<String> {
-    let mut day_1 = String::from("day 1 results : ");
-    let (part1, part2) = &day_1::run().unwrap();
-    day_1.push_str("Part 1: \n");
-    day_1.push_str(part1);
-    day_1.push_str("Part 2: \n");
-    day_1.push_str(part2);
-    let mut day_2 = String::from("day 2 result : ");
-    let (day2_part1,day2_part2) = &day_2::run().unwrap();
-    day_2.push_str("Part 1: \n");
-    day_2.push_str(day2_part1);
-    day_2.push_str("Part 2: \n");
-    day_2.push_str(day2_part2);
-    return vec![day_1, day_2]
+fn format_result_string(results: Vec<Vec<String>>) -> String {
+    let mut result_string = String::new();
+    for (day_index, result) in results.iter().enumerate() {
+        result_string.push_str(&*format!("Day {}: \n", day_index + 1));
+        for (part_index, part) in result.iter().enumerate() {
+            result_string.push_str(&*format!("\tPart {}: \n", part_index + 1));
+            result_string.push_str(&*format!("\t\t{} \n", part));
+        }
+    }
+    result_string
+}
+
+pub(crate) fn main() -> String {
+    return format_result_string(vec![
+        day_1::run().unwrap(),
+        day_2::run().unwrap(),
+        day_3::run().unwrap(),
+    ]);
 }

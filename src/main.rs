@@ -1,6 +1,8 @@
+#![feature(slice_as_chunks)]
+#![feature(slice_partition_dedup)]
+
 mod days;
 
 pub(crate) fn main() {
-    let results = days::main::main();
-    println!("{:?}",results);
+    println!("{}", days::main::main());
 }
