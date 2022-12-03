@@ -1,5 +1,5 @@
 pub(crate) fn run() -> Option<Vec<String>> {
-    match std::fs::read_to_string("src/days/inputs/day_1.txt") {
+    match std::fs::read_to_string("inputs/day_1.txt") {
         Ok(body_string) => {
             let mut all_elves: Vec<i32> = vec![];
             let mut this_elf: Vec<i32> = vec![];

@@ -1,5 +1,5 @@
 pub(crate) fn run() -> Option<Vec<String>> {
-    match std::fs::read_to_string("src/days/inputs/day_3.txt") {
+    match std::fs::read_to_string("inputs/day_3.txt") {
         Ok(body_string) => {
             let mut total_sum: i32 = 0;
 

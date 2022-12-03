@@ -124,7 +124,7 @@ pub(crate) fn run() -> Option<Vec<String>> {
     let mut part1_total_score: i32 = 0;
     let mut part2_total_score: i32 = 0;
 
-    match std::fs::read_to_string("src/days/inputs/day_2.txt") {
+    match std::fs::read_to_string("inputs/day_2.txt") {
         Ok(body_string) => {
             for line in body_string.split("\n") {
                 match RPSGameP1::from_game(line) {
