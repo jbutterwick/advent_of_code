@@ -23,12 +23,12 @@ enum RPSMove {
 
 impl RPSMove {
     fn get_result(&self, other: &RPSMove) -> bool {
-        match (self, other) {
-            (RPSMove::ROCK, RPSMove::SCISSORS) => true,
-            (RPSMove::SCISSORS, RPSMove::PAPER) => true,
-            (RPSMove::PAPER, RPSMove::ROCK) => true,
-            _ => false,
-        }
+        matches!(
+            (self, other),
+            (Self::ROCK, Self::SCISSORS)
+                | (Self::PAPER, Self::ROCK)
+                | (Self::SCISSORS, Self::PAPER)
+        )
     }
 
     fn get_move(&self, result: &RPSResult) -> RPSMove {

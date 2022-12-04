@@ -21,33 +21,32 @@ pub(crate) fn run() -> Option<Vec<String>> {
                 }
             }
 
-            let mut sum_badges:i32 = 0;
+            let mut sum_badges: i32 = 0;
 
             let lines = body_string.split("\n").collect::<Vec<&str>>();
             for group in lines.chunks(3) {
                 match group {
                     [first, second, third] => {
-
-                        let mut first_dedup:Vec<char> = first.chars().collect::<Vec<char>>();
+                        let mut first_dedup: Vec<char> = first.chars().collect::<Vec<char>>();
                         first_dedup.sort();
                         first_dedup.dedup();
-                        let mut second_dedup:Vec<char> = second.chars().collect::<Vec<char>>();
+                        let mut second_dedup: Vec<char> = second.chars().collect::<Vec<char>>();
                         second_dedup.sort();
                         second_dedup.dedup();
-                        let mut third_dedup:Vec<char> = third.chars().collect::<Vec<char>>();
+                        let mut third_dedup: Vec<char> = third.chars().collect::<Vec<char>>();
                         third_dedup.sort();
                         third_dedup.dedup();
 
-                        for f in &first_dedup{
-                            for s in &second_dedup{
-                                for t in &third_dedup{
+                        for f in &first_dedup {
+                            for s in &second_dedup {
+                                for t in &third_dedup {
                                     if (f == t) && (t == s) && (f == s) {
                                         sum_badges += find_char_priority(f) as i32;
-                                        break
+                                        break;
                                     }
                                 }
                             }
-                        };
+                        }
                     }
                     [""] => println!("huge booboo in day 3"),
                     _ => panic!("huge booboo in day 3"),

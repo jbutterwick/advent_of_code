@@ -17,5 +17,6 @@ pub(crate) fn main() -> String {
         day_1::run().unwrap(),
         day_2::run().unwrap(),
         day_3::run().unwrap(),
+        day_4::run().unwrap(),
     ]);
 }
