@@ -1,5 +1,5 @@
 use std::ops::Range;
-use std::str::{FromStr, Split};
+use std::str::{FromStr};
 
 struct SectionIds((Range<i32>, Range<i32>));
 
@@ -39,17 +39,15 @@ pub(crate) fn run() -> Option<Vec<String>> {
                         {
                             part1_answer += 1;
                         }
-                        if (first.start <= second.end) && (second.start <= first.end)
-                        {
+                        if (first.start <= second.end) && (second.start <= first.end) {
                             part2_answer += 1;
                         }
                     }
-                    _ => panic!("didn't get an expected number of strings"),
                 }
             }
 
-            Some(vec![part1_answer.to_string(),part2_answer.to_string()])
+            Some(vec![part1_answer.to_string(), part2_answer.to_string()])
         }
-        Err(err) => None,
+        _ => None,
     }
 }
