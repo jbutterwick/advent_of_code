@@ -1,2 +1,2 @@
-# advent_22
-My Rust [Advent of Code 2022](https://adventofcode.com/) solutions if you want to follow along
+# advent_of_code
+My [Advent of Code](https://adventofcode.com/) solutions
