@@ -1,5 +1,5 @@
 pub(crate) fn run() -> Option<Vec<String>> {
-    match std::fs::read_to_string("../../inputs/day1.txt") {
+    match std::fs::read_to_string("../../inputs/day2.txt") {
         Ok(body_string) => {
             let mut output_vec: Vec<u32> = vec![];
             for line in body_string.split('\n') {
@@ -11,6 +11,6 @@ pub(crate) fn run() -> Option<Vec<String>> {
 
             Some(vec![output_vec.iter().sum::<u32>().to_string()])
         }
-        _ => panic!("couldn't read day 1 file"),
+        _ => panic!("couldn't read day 2 file"),
     }
 }
