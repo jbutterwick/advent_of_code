@@ -1,8 +1,6 @@
 [package]
-name = "advent_22"
+name = "aoc_23"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-itertools = "0.10.5"
-nom = "7.1.1"
