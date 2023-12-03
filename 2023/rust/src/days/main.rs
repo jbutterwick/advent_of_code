@@ -13,5 +13,5 @@ fn format_result_string(results: Vec<Vec<String>>) -> String {
 }
 
 pub(crate) fn main() -> String {
-    format_result_string(vec![day_1::run().unwrap()])
+    format_result_string(vec![day_1::run().unwrap(), day_2::run().unwrap()])
 }

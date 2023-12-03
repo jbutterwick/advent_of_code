@@ -41,7 +41,7 @@ pub(crate) fn run() -> Option<Vec<String>> {
 fn get_first_digit(bytes: &[u8]) -> Option<&u8> {
     match bytes {
         [] => panic!("Digit not found!"),
-        [byte, ..] if (byte >= &b'0' && byte <= &b'9') => Some(byte),
+        [byte, ..] if (&b'0'..=&b'9').contains(&byte) => Some(byte),
         [b'o', b'n', b'e', ..] => Some(&b'1'),
         [b't', b'w', b'o', ..] => Some(&b'2'),
         [b't', b'h', b'r', b'e', b'e', ..] => Some(&b'3'),
@@ -58,7 +58,7 @@ fn get_first_digit(bytes: &[u8]) -> Option<&u8> {
 fn get_last_digit(bytes: &[u8]) -> Option<&u8> {
     match bytes {
         [] => panic!("Digit not found!"),
-        [byte, ..] if (byte >= &b'0' && byte <= &b'9') => Some(byte),
+        [byte, ..] if (&b'0'..=&b'9').contains(&byte) => Some(byte),
         [b'e', b'n', b'o', ..] => Some(&b'1'),
         [b'o', b'w', b't', ..] => Some(&b'2'),
         [b'e', b'e', b'r', b'h', b't', ..] => Some(&b'3'),
