@@ -1,6 +1,5 @@
 [package]
 name = "advent_22"
-path = "src/main.rs"
 version = "0.1.0"
 edition = "2021"
 

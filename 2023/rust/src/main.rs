@@ -1,4 +1,3 @@
-#![feature(slice_take)]
 extern crate core;
 
 mod days;
